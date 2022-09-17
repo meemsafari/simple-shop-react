@@ -16,15 +16,18 @@ const prices = {
 class Shopping extends React.Component {
 
     state = {
-        products: {
-            product1: 0,
-            product2: 0,
-            product3: 0,
-            product4: 0,
-        },
+        products: null,
         totalPrice: 0,
         purchased: false,
         loading: false
+    }
+
+    componentDidMount() {
+        axios.get('/products.json').then((response)=> {
+            this.setState({products: response.data})
+        }).catch((err)=> {
+
+        })
     }
 
     addProductHandler = (type) => {
@@ -81,12 +84,23 @@ class Shopping extends React.Component {
     }
 
     render() {
-        let order = <Order products={this.state.products}
+        let order = null;
+
+        if (this.state.loading) {
+            order = <Loader />
+        }
+        let controls = <Loader />
+        if (this.state.products) {
+            controls = <Controls
+                productAdd={this.addProductHandler}
+                productRemove={this.removeProductHandler}
+                totalPrice={this.state.totalPrice}
+                order={this.purchaseHandler} />
+
+            order = <Order products={this.state.products}
                            continue={this.purchaseContinueHandler}
                            cancel={this.modalCloseHandler}
                            total={this.state.totalPrice}></Order>
-        if (this.state.loading) {
-            order = <Loader />
         }
         return(
             <Wrapper>
@@ -95,11 +109,7 @@ class Shopping extends React.Component {
                     modalClose={this.modalCloseHandler}>
                     {order}
                 </Modal>
-                <Controls
-                    productAdd={this.addProductHandler}
-                    productRemove={this.removeProductHandler}
-                    totalPrice={this.state.totalPrice}
-                    order={this.purchaseHandler} />
+                {controls}
             </Wrapper>
         )
     }
