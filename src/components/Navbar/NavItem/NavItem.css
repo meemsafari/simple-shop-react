@@ -1,5 +1,5 @@
 .nav-item {
-    display: flex;
+    display: inline-block;
     box-sizing: border-box;
     height: 100%;
     margin: 0;
