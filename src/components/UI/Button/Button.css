@@ -1,0 +1,25 @@
+.btn {
+    display: inline-block;
+    font: inherit;
+    padding: 5px;
+    margin: 0 12px;
+    width: 80px;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    outline: none;
+    cursor: pointer;
+}
+.btn-lg {
+    width: 120px!important;
+    font-size: 1.2rem;
+}
+.btn-success {
+    background-color: #42bc42;
+}
+.btn-danger {
+    background-color: #c43e3e;
+}
+.btn-info {
+    background-color: #0975be;
+}

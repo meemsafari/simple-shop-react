@@ -1,5 +1,6 @@
 import React from 'react';
 import Wrapper from "../../hoc/Wrapper";
+import Button from "../UI/Button/Button";
 
 const Order = (props) => {
 
@@ -18,6 +19,13 @@ const Order = (props) => {
             <ul>
                 {summary}
             </ul>
+            <p>
+                <b>
+                    Total price: {props.total}
+                </b>
+            </p>
+            <Button btnType={'btn-success'} click={props.continue}>Yes</Button>
+            <Button btnType={'btn-danger'} click={props.cancel}>No</Button>
         </Wrapper>
     )
 }

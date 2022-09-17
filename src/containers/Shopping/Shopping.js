@@ -58,11 +58,20 @@ class Shopping extends React.Component {
         this.setState({purchased:false})
     }
 
+    purchaseContinueHandler = () => {
+        console.log('continue')
+    }
+
     render() {
         return(
             <Wrapper>
-                <Modal show={this.state.purchased} modalClose={this.modalCloseHandler}>
-                    <Order products={this.state.products}></Order>
+                <Modal
+                    show={this.state.purchased}
+                    modalClose={this.modalCloseHandler}>
+                        <Order products={this.state.products}
+                            continue={this.purchaseContinueHandler}
+                            cancel={this.modalCloseHandler}
+                            total={this.state.totalPrice}></Order>
                 </Modal>
                 <Controls
                     productAdd={this.addProductHandler}
