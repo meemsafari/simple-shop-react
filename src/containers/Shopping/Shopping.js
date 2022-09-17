@@ -3,6 +3,8 @@ import Wrapper from "../../hoc/Wrapper";
 import Controls from "../../components/Controls/Controls";
 import Modal from "../../components/UI/Modal/Modal";
 import Order from "../../components/Order/Order";
+import axios from "../../axios-orders"
+import Loader from "../../components/UI/Loader/Loader";
 
 const prices = {
     product1: 59,
@@ -21,7 +23,8 @@ class Shopping extends React.Component {
             product4: 0,
         },
         totalPrice: 0,
-        purchased: false
+        purchased: false,
+        loading: false
     }
 
     addProductHandler = (type) => {
@@ -59,19 +62,38 @@ class Shopping extends React.Component {
     }
 
     purchaseContinueHandler = () => {
-        console.log('continue')
+
+        this.setState({loading: true})
+
+        const order = {
+            products: this.state.products,
+            price: this.state.totalPrice,
+            customer: {
+                name: 'Mahdi',
+                email: 'meemsafari@gmail.com'
+            }
+        }
+        axios.post('/orders.json', order).then((response)=>{
+            this.setState({loading: false, purchased: false})
+        }).catch((err) => {
+            this.setState({loading: false, purchased: false})
+        })
     }
 
     render() {
+        let order = <Order products={this.state.products}
+                           continue={this.purchaseContinueHandler}
+                           cancel={this.modalCloseHandler}
+                           total={this.state.totalPrice}></Order>
+        if (this.state.loading) {
+            order = <Loader />
+        }
         return(
             <Wrapper>
                 <Modal
                     show={this.state.purchased}
                     modalClose={this.modalCloseHandler}>
-                        <Order products={this.state.products}
-                            continue={this.purchaseContinueHandler}
-                            cancel={this.modalCloseHandler}
-                            total={this.state.totalPrice}></Order>
+                    {order}
                 </Modal>
                 <Controls
                     productAdd={this.addProductHandler}

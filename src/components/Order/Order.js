@@ -1,6 +1,7 @@
 import React from 'react';
 import Wrapper from "../../hoc/Wrapper";
 import Button from "../UI/Button/Button";
+import './Order.css'
 
 const Order = (props) => {
 
@@ -16,7 +17,7 @@ const Order = (props) => {
     return(
         <Wrapper>
             <h3>Order</h3>
-            <ul>
+            <ul className={'order-list'}>
                 {summary}
             </ul>
             <p>
