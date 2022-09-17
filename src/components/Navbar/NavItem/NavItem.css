@@ -1,0 +1,20 @@
+.nav-item {
+    display: flex;
+    box-sizing: border-box;
+    height: 100%;
+    margin: 0;
+    align-items: center;
+}
+
+.nav-item a {
+    height: 100%;
+    display: block;
+    text-decoration: none;
+    box-sizing: border-box;
+    padding: 16px 10px;
+    color: white;
+}
+
+.nav-item a:hover {
+    background: black;
+}
