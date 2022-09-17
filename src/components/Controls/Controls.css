@@ -1,0 +1,15 @@
+.controls {
+    width: 50rem;
+    background: #fafaff;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    margin: 3rem auto;
+    border-radius: 6px;
+    padding: 2rem 0;
+    box-shadow: 0 0 25px 0px rgba(0,0,0,0.2);
+}
+.total-price p {
+    font-weight: 600;
+    font-size: 1.5rem;
+}

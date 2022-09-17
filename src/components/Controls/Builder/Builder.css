@@ -1,0 +1,12 @@
+.builder {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 12px 0;
+}
+
+.builder div {
+    color: #333;
+    margin: 0 12px;
+    font-weight: 600;
+}
