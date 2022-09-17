@@ -2,12 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fc05af19-b55e-4950-8f46-334c716969ea" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/UI/Button/Button.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/UI/Button/Button.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Order/Order.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Order/Order.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/Shopping/Shopping.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/Shopping/Shopping.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Controls/Builder/Builder.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Controls/Builder/Builder.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Controls/Controls.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Controls/Controls.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

@@ -1,6 +1,7 @@
 import React from 'react'
 import './Controls.css'
 import Builder from "./Builder/Builder";
+import Button from "../UI/Button/Button";
 
 const products = [
     {title: 'Product 1', type: 'product1'},
@@ -20,9 +21,7 @@ const Controls = (props) => {
             {products.map((item) => {
                 return <Builder key={item.title} title={item.title} add={()=>props.productAdd(item.type)} remove={()=>props.productRemove(item.type)} />
             })}
-            <button className={'btn btn-lg btn-info mt-2'} onClick={props.order}>
-                Order
-            </button>
+            <Button btnType={'btn-lg btn-info mt-2'} click={props.order}>Order</Button>
         </div>
     )
 };

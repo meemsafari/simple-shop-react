@@ -1,5 +1,6 @@
 import React from 'react'
 import './Builder.css'
+import Button from "../../UI/Button/Button";
 
 const Builder = (props) => {
     return(
@@ -7,12 +8,8 @@ const Builder = (props) => {
             <div>
                 {props.title}
             </div>
-            <button onClick={props.add} className={'btn btn-success'}>
-                Add
-            </button>
-            <button onClick={props.remove} className={'btn btn-danger'}>
-                Remove
-            </button>
+            <Button btnType={'btn-success'} click={props.add} >Add</Button>
+            <Button btnType={'btn-danger'} click={props.remove} >Remove</Button>
         </div>
     )
 }
