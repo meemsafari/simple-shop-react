@@ -2,7 +2,12 @@
 
 #IDE
 .idea
+.idea/*
+.idea/modules.xml
 .idea/workspace.xml
+.idea/react-test.iml
+
+
 
 # dependencies
 /node_modules
