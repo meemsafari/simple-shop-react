@@ -20,9 +20,9 @@ const Controls = (props) => {
             {products.map((item) => {
                 return <Builder key={item.title} title={item.title} add={()=>props.productAdd(item.type)} remove={()=>props.productRemove(item.type)} />
             })}
-            {/*<button className={'btn btn-lg btn-info mt-2'}>*/}
-            {/*    Order*/}
-            {/*</button>*/}
+            <button className={'btn btn-lg btn-info mt-2'} onClick={props.order}>
+                Order
+            </button>
         </div>
     )
 };

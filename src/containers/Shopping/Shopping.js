@@ -1,6 +1,8 @@
 import React from "react";
 import Wrapper from "../../hoc/Wrapper";
 import Controls from "../../components/Controls/Controls";
+import Modal from "../../components/UI/Modal/Modal";
+import Order from "../../components/Order/Order";
 
 const prices = {
     product1: 59,
@@ -18,7 +20,8 @@ class Shopping extends React.Component {
             product3: 0,
             product4: 0,
         },
-        totalPrice: 0
+        totalPrice: 0,
+        purchased: false
     }
 
     addProductHandler = (type) => {
@@ -47,10 +50,25 @@ class Shopping extends React.Component {
         this.setState({totalPrice: newPrice, products: updatedProducts})
     }
 
+    purchaseHandler = () => {
+        this.setState({purchased:true})
+    }
+
+    modalCloseHandler = () => {
+        this.setState({purchased:false})
+    }
+
     render() {
         return(
             <Wrapper>
-                <Controls productAdd={this.addProductHandler} productRemove={this.removeProductHandler} totalPrice={this.state.totalPrice} />
+                <Modal show={this.state.purchased} modalClose={this.modalCloseHandler}>
+                    <Order products={this.state.products}></Order>
+                </Modal>
+                <Controls
+                    productAdd={this.addProductHandler}
+                    productRemove={this.removeProductHandler}
+                    totalPrice={this.state.totalPrice}
+                    order={this.purchaseHandler} />
             </Wrapper>
         )
     }
